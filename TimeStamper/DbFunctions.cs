@@ -1,4 +1,6 @@
-﻿using Spectre.Console;
+﻿using Microsoft.EntityFrameworkCore;
+using Spectre.Console;
+using System;
 using System.Diagnostics.Metrics;
 using TimeStamper.Data;
 
@@ -115,25 +117,44 @@ namespace TimeStamper
 
             using (var db = new TimeStampAppDbContext())
             {
-                Console.WriteLine("What project did you work on?");
-                ListProjects();
-                string projectInput = Console.ReadLine();
-                var project = db.AljProjects.Where(p => p.ProjectName == projectInput).ToList();
-                if (project != null)
+                var person = db.AljPeople.Where(p => p.PersonName == activePerson).ToList();
+                if (person == null)
                 {
-                    Console.WriteLine("How many hours did you work on it?");
-                    int hoursInput = int.Parse(Console.ReadLine());
-
-                    AljProjectPerson projectLog = new AljProjectPerson();
-                    projectLog.Hours = hoursInput;
-                    
-                    db.AljProjectPeople.Add(projectLog);
+                    // If person doesn't exist give error
+                    throw new Exception("Error"); 
                 }
+                // If person is not null that means it found a match in the db and the function continues
+                else if (person != null)
+                {
+                    int personId = person[0].Id;
+                    Console.WriteLine("What project did you work on?");
+                    ListProjects();
+                    string projectInput = Console.ReadLine();
+                    var project = db.AljProjects.Where(p => p.ProjectName == projectInput).ToList();
+                    if (project != null)
+                    {
+                        int projectId = project[0].Id;
+                        Console.WriteLine("How many hours did you work on it?");
+                        int hoursInput = int.Parse(Console.ReadLine());
+
+                        AljProjectPerson projectLog = new AljProjectPerson()
+                        {
+                            Hours = hoursInput,
+                            PersonId = personId,
+                            ProjectId = projectId
+                        };
+                        projectLog.Hours = hoursInput;
+
+                        db.AljProjectPeople.Add(projectLog);
+                    }
+                }
+                
 
                 db.SaveChanges();
             }
             Console.WriteLine("Project added...");
         }
-
     }
+
 }
+

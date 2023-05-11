@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arvid\\OneDrive\\yh-projects\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj": {}
+    "C:\\Users\\Arvid\\OneDrive\\yhProj\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arvid\\OneDrive\\yh-projects\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj": {
+    "C:\\Users\\Arvid\\OneDrive\\yhProj\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arvid\\OneDrive\\yh-projects\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj",
+        "projectUniqueName": "C:\\Users\\Arvid\\OneDrive\\yhProj\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj",
         "projectName": "TimeStamper",
-        "projectPath": "C:\\Users\\Arvid\\OneDrive\\yh-projects\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj",
+        "projectPath": "C:\\Users\\Arvid\\OneDrive\\yhProj\\C#\\TimeStamper\\TimeStamper\\TimeStamper.csproj",
         "packagesPath": "C:\\Users\\Arvid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arvid\\OneDrive\\yh-projects\\C#\\TimeStamper\\TimeStamper\\obj\\",
+        "outputPath": "C:\\Users\\Arvid\\OneDrive\\yhProj\\C#\\TimeStamper\\TimeStamper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
